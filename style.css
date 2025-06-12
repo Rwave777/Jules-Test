@@ -1,0 +1,55 @@
+body {
+  font-family: 'Arial', sans-serif; /* Changed font for a slightly cleaner look */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2c3e50; /* Darker background for more contrast */
+  color: #ecf0f1; /* Light text color for body */
+  margin-top: 20px; /* Added margin to push content down a bit */
+}
+
+#game-container { /* Optional: A container for game and score for easier overall styling */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(10, 30px); /* Each cell 30px wide */
+  grid-template-rows: repeat(20, 30px);    /* Each cell 30px high */
+  border: 5px solid #1abc9c; /* Brighter border color */
+  background-color: #34495e; /* Darker board background */
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5); /* Added some shadow for depth */
+}
+
+.block {
+  /* This is the style for an individual cell in the grid */
+  width: 30px; /* Explicitly set from JS grid-template-columns */
+  height: 30px; /* Explicitly set from JS grid-template-rows */
+  box-sizing: border-box; /* Important for border not to add to size */
+  background-color: #7f8c8d; /* Default empty cell color - a bit darker grey */
+  border: 1px solid #95a5a6; /* Lighter border for empty cells to show grid */
+}
+
+/*
+  The .block class defines the style for every cell in the grid (empty by default).
+  The .tetromino-piece class is added by script.js to cells that are part of an
+  active or locked Tetromino, allowing for specific styling (like borders) for these pieces.
+  The background color of Tetromino pieces is set directly by script.js.
+*/
+
+#score {
+  font-size: 28px; /* Slightly larger */
+  font-weight: bold;
+  color: #e74c3c; /* Bright color for score */
+  margin-bottom: 20px; /* Space below score if needed */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Subtle text shadow */
+}
+
+/* A class for blocks that are part of a Tetromino, to override default .block border */
+/* This class is added by script.js to cells that are part of a Tetromino. */
+.tetromino-piece {
+    border: 1px solid #333; /* Defines border for Tetromino pieces, matching previous JS direct style. */
+}
