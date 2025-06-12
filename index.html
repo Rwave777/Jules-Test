@@ -5,8 +5,16 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div id="game-board"></div>
-  <div id="score">Score: 0</div>
+  <div id="game-container">
+    <div id="game-board"></div>
+    <div id="info-area"> <!-- 追加 -->
+      <div id="score">Score: 0</div>
+      <div id="next-tetromino-container">
+        <h2>Next Tetromino</h2>
+        <div id="next-tetromino"></div>
+      </div>
+    </div>                   <!-- 追加 -->
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
