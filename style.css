@@ -8,7 +8,14 @@ body {
   margin-top: 20px; /* Added margin to push content down a bit */
 }
 
-#game-container { /* Optional: A container for game and score for easier overall styling */
+#game-container {
+  display: flex;
+  align-items: flex-start; /* 上端揃え */
+  gap: 20px; /* ゲームボードと次のテトリミノ表示エリアの間隔 */
+}
+
+/* 右側の情報表示エリア（スコアと次のテミノ）をまとめるコンテナ */
+#info-area {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,6 +53,39 @@ body {
   color: #e74c3c; /* Bright color for score */
   margin-bottom: 20px; /* Space below score if needed */
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Subtle text shadow */
+}
+
+#next-tetromino-container {
+  padding: 10px;
+  background-color: #34495e; /* ゲームボードの背景色と合わせる */
+  border: 3px solid #1abc9c; /* ゲームボードの枠線色と合わせる */
+  border-radius: 5px; /* 少し角を丸くする */
+  box-shadow: 0 0 10px rgba(0,0,0,0.3); /* 影をつける */
+  text-align: center; /* h2要素を中央揃え */
+}
+
+#next-tetromino-container h2 {
+  margin-top: 0; /* 上の余白を削除 */
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #ecf0f1; /* 明るい文字色 */
+}
+
+#next-tetromino {
+  display: grid;
+  grid-template-columns: repeat(4, 20px); /* 4x4のグリッド、各セル20px */
+  grid-template-rows: repeat(4, 20px);
+  width: 80px; /* 20px * 4 */
+  height: 80px; /* 20px * 4 */
+  background-color: #7f8c8d; /* 空セルの背景色 */
+  border: 1px solid #95a5a6; /* グリッドの境界線 */
+}
+
+/* 次のテトリミノのセルスタイル (script.jsで色を付ける) */
+#next-tetromino .block {
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
 }
 
 /* A class for blocks that are part of a Tetromino, to override default .block border */
